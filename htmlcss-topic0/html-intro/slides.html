@@ -1,0 +1,550 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <!--[if gte IE 9]><meta http-equiv="X-UA-Compatible" content="IE=edge" /><![endif]-->
+    <!--[if lt IE 9]><meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1" /><![endif]-->
+<meta charset="utf-8" />
+    <title>Selectors: Select This!</title>
+    <link href='http://fonts.googleapis.com/css?family=Rum+Raisin' rel='stylesheet'>
+    <link href='http://fonts.googleapis.com/css?family=Bigelow+Rules' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="../slides.css"/>
+<style>
+.current * { -webkit-tap-highlight-color: #bada55;}
+.thisSlide.foo {
+  -webkit-tap-highlight-color: #bada55;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+.beforeafter:before {
+  content: "before - ";
+  font-weight: bold;
+}
+.beforeafter:after {
+  content: " - after";
+  font-weight: bold;
+  }
+.active {color: red; font-weight: bold; background-color: rgba(0,0,0,0.3)}
+#presentation {-webkit-animation: none; background-image: none;}
+</style>
+</head>
+
+<body>
+<!-- Top instructions -->
+<div id="topinfo"></div>
+<!-- footer instructions -->
+<div id="info">
+    <p><a href="https://github.com/globant-ui/">Globant UI</a> | <a href="https://github.com/globant-ui/html5bootcamp">Bootcamp Github</a> | Press <span class="key">&rarr;</span> key to advance.</p>
+</div>
+
+  <div id="presentation">
+   <div id="presentation-counter"></div>
+   <div id="slides">
+
+    <div class="slide intro">
+     <header><hgroup>
+      <h1><span class="textmask">Intro to HTML</span></h1>
+     </hgroup></header>
+    </div>
+
+    <div class="slide section">
+      <header><h1>Anatomy of a Website</h1></header>
+      <section class="content">
+        <p>
+          Content<br><br> +
+          <span class="html-tag">HTML</span> + <span class="css-tag">CSS</span> + <span class="js-tag">JS</span> = 
+        </p>  
+        <p>Your Website</p>
+        
+      </section>
+    </div>
+    <div class="slide section">
+      <header><h2 class="html-tag">HTML</h2></header>
+      <section class="content">
+        <div>
+          <img src="./img/semantic.png" width="300">
+        </div>
+        <p>Structure + Semantics</p>
+      </section>
+    </div>
+    <div class="slide normal">
+      <header><h1>HTML: "<b>H</b>yper<b>T</b>ext <b>M</b>arkup <b>L</b>anguage"</h1></header> 
+     <section class="content"> 
+
+     <p>
+      <img src="./img/htmllogo.jpg"
+      style="float:right;border:none;box-shadow:none; width:200px;">
+      It is:
+     </p>
+     <p>
+     - A text file that is "marked up" with tags<br>
+     - Saved with <code>.html</code> extension<br>
+     - The native language of web browsers.<br>
+    </p>
+     <br><br>
+
+     <p>
+      <img src="./img/screenreader.jpg" style="float:right;">
+      It should be:
+     </p>
+     <ul>
+      <li>Semantic</li>
+      <li>Accessible</li>
+     </ul>
+
+     <br>
+     <p style="font-size:12px;">&#9758; Read more: <a href="http://www.userite.com/">How disabled people use the internet</a>
+      </p>
+     </section>
+    </div>
+
+     
+    <div class="slide normal"> 
+     <header><h1>Anatomy of an HTML tag</h1></header> 
+     <section class="content"> 
+     <p>Each tag has a "start tag", "end tag", some content in between, and optional attributes.</p>
+
+      <pre>
+      &lt;<span style="color:blue">tagname</span> <span style="color:red">attribute="value"</span>&gt;
+        content
+      &lt;/<span style="color:blue">tagname</span>&gt;
+
+      &lt;<span style="color:blue">a</span> <span style="color:red">href="http://www.google.com"</span> &gt;
+        Google
+      &lt;/<span style="color:blue">a</a>&gt;
+      </pre>
+
+      <p>Think of a tag as a "command" to the browser and of the attributes as modifiers of that command.</p>
+
+           </section>
+    </div>
+
+
+
+    <div class="slide object">
+      <header><h1>Play Time</h1></header>
+      <object data="./exercise/step0.html" style="padding-top:100px"></object>
+      <a href="./exercise/step0.html" target="play" class="objectlink">See exercise out</a>
+   </div>
+   
+    <div class="slide normal"> 
+     <header><h1>The Basic HTML file</h1></header> 
+     <section class="content"> 
+      <pre style="font-size:100%; line-height:1.5">
+      &lt;!DOCTYPE html&gt;
+      &lt;html&gt;
+      &lt;/html&gt;
+      </pre>
+
+      <p>The doctype isn't an actual tag, but it needs to be at start at every HTML page to tell browser which version of HTML you're using (HTML5 here).</p>
+      <p>The <code>html</code> tag is always the first, root tag in the page.</p>
+     </section>
+    </div>
+
+<div class="slide normal"> 
+     <header><h1>Head</h1></header> 
+     <section class="content"> 
+      <pre style="font-size:100%; line-height:1.5">
+      &lt;!DOCTYPE html&gt;
+      &lt;html&gt;
+       <strong>&lt;head&gt;
+        &lt;meta charset="utf-8"&gt;
+        &lt;title&gt;Title of your page goes here&lt;/title&gt;
+       &lt;/head&gt;</strong>
+      &lt;/html&gt; 
+      </pre>
+           <p>The head contains "meta" information about the page, information that the browser needs before rendering.</p>
+
+     </section>
+    </div>
+    <div class="slide normal"> 
+     <header><h1>The Body</h1></header> 
+     <section class="content"> 
+      <pre style="font-size:100%; line-height:1.5">
+      &lt;!DOCTYPE html&gt;
+      &lt;html&gt;
+       &lt;head&gt;
+        &lt;meta charset="utf-8"&gt;
+        &lt;title&gt;Title of your page goes here&lt;/title&gt;
+       &lt;/head&gt;
+       <strong>&lt;body&gt;
+        Bulk of your content here.
+       &lt;/body&gt;</strong>
+      &lt;/html&gt; 
+      </pre>
+      <p>The body contains the actual content of the page.</p>
+     </section>
+    </div>
+    
+     <div class="slide intro">
+      <header><h1>What goes in the body?</h1></header>
+    </div>
+ <div class="slide normal"> 
+     <header><h1>Headlines</h1></header> 
+     <section class="content"> 
+     <pre>
+<b>&lt;h1&gt;</b>Header 1<b>&lt;/h1&gt;</b>
+<b>&lt;h2&gt;</b>Header 2<b>&lt;/h2&gt;</b>
+...
+<b>&lt;h6&gt;</b>Header 6<b>&lt;/h6&gt;</b>
+</pre>
+
+<h1>Header 1</h1>
+<h2>Header 2</h2>
+...
+<h6>Header 6</h6>
+     </section>
+    </div>
+    
+   
+    
+    
+    
+    <div class="slide normal"> 
+     <header><h1>Paragraphs</h1></header> 
+     <section class="content"> 
+     <pre>
+<b>&lt;p&gt;</b>Paragraph 1<b>&lt;/p&gt;</b>
+<b>&lt;p&gt;</b>Paragraph 2<b>&lt;/p&gt;</b>
+<b>&lt;p&gt;</b>Paragraph 3<b>&lt;/p&gt;</b>
+</pre>
+
+<p>Paragraph 1</p>
+<p>Paragraph 2</p>
+<p>Paragraph 3</p>
+     </section>
+    </div>
+    
+   
+    
+    
+    
+    <div class="slide normal"> 
+     <header><h1>Line Breaks</h1></header> 
+     <section class="content"> 
+     
+<pre>
+&lt;p&gt;
+Imagine there's no Heaven <b>&lt;br&gt;</b>
+It's easy if you try <b>&lt;br&gt;</b>
+No hell below us  <b>&lt;br&gt;</b>
+Above us only sky <b>&lt;br&gt;</b>
+&lt;/p&gt;
+</pre>
+
+<p>
+Imagine there's no Heaven <br>
+It's easy if you try <br>
+No hell below us  <br>
+Above us only sky <br>
+</p>
+
+<p>Notice: This tag does not need to be closed, since it doesn't encapsulate anything.</p>
+
+     </section>
+    </div>
+    
+   
+    
+    
+    
+    <div class="slide normal"> 
+     <header><h1>Lists</h1></header> 
+     <section class="content"> 
+     <pre>
+<b>&lt;ul&gt;</b>
+  <b>&lt;li&gt;</b>Item 1<b>&lt;/li&gt;</b>
+  <b>&lt;li&gt;</b>Item 2<b>&lt;/li&gt;</b>
+  ...
+<b>&lt;/ul&gt;</b>
+</pre>
+
+<ul>
+  <li>Item 1</li>
+  <li>Item 2</li>
+  ...
+</ul>
+     </section>
+    </div>
+    
+   
+    
+    
+    
+    <div class="slide normal"> 
+     <header><h1>Ordered Lists</h1></header> 
+     <section class="content"> 
+     <pre>
+<b>&lt;ol&gt;</b>
+  <b>&lt;li&gt;</b>Item 1<b>&lt;/li&gt;</b>
+  <b>&lt;li&gt;</b>Item 2<b>&lt;/li&gt;</b>
+  ...
+<b>&lt;/ol&gt;</b>
+</pre>
+
+<ol>
+  <li>Item 1</li>
+  <li>Item 2</li>
+  ...
+</ol>
+     </section>
+    </div>
+    
+   
+    
+    
+    
+    <div class="slide normal"> 
+     <header><h1>Formatted Text</h1></header> 
+     <section class="content"> 
+     <pre>
+<b>&lt;em&gt;</b>Emphasized Info<b>&lt;/em&gt;</b>
+</pre>
+<em>Emphasized Info</em>
+<pre>
+<b>&lt;strong&gt;</b>Important Info!<b>&lt;/strong&gt;</b>
+</pre>
+<strong>Important Info!</strong>
+
+<pre>
+&lt;p&gt;
+You can have <b>&lt;em&gt;</b>emphasized info<b>&lt;/em&gt;</b>
+and <b>&lt;strong&gt;</b>important info<b>&lt;/strong&gt;</b>
+in the same paragraph.
+&lt;/p&gt;
+</pre>
+
+<p>
+You can have <em>emphasized info</em> and <strong>important info</strong>
+in the same paragraph.
+</p>
+
+     </section>
+    </div>
+    
+   
+
+    <div class="slide normal"> 
+     <header><h1>Images</h1></header> 
+     <section class="content"> 
+     <pre>
+&lt;img src="http://www.google.com/images/srpr/logo1w.png" 
+  alt="Google"&gt;
+</pre>
+
+<img src="http://www.google.com/images/srpr/logo1w.png" 
+  alt="Google">
+
+     <pre>
+&lt;img src="http://www.google.com/images/srpr/logo1w.png" 
+  alt="Google" <b>height="50"</b>&gt;
+</pre>
+
+<img src="http://www.google.com/images/srpr/logo1w.png" 
+  alt="Google" height="50">
+
+<br><br>
+&#9758; <a href="http://osric.com/chris/accidental-developer/2012/01/when-should-alt-text-be-blank/">
+When Should Alt Text Be Blank?</a>
+
+     <p class="notes">
+      - Show how to copy/paste image URL in browser
+      - Explain dangers of hotlinking.
+      - Talk about relative vs. absolute URLs
+      - Talk about not loading giant images.
+     </p>
+     
+     </section>
+    </div>
+    
+   
+    
+    
+    
+    <div class="slide normal"> 
+     <header><h1>Links</h1></header> 
+     <section class="content"> 
+<pre>
+<b>&lt;a href="http://www.google.com"&gt;</b>Google<b>&lt;/a&gt;</b>
+</pre>
+
+<a href="http://www.google.com">Google</a>
+
+<pre>
+<b>&lt;a href="http://www.google.com"&gt;</b>
+  &lt;img src="http://www.google.com/images/srpr/logo1w.png" 
+    alt="Google"&gt;
+<b>&lt;/a&gt;</b>
+</pre>
+
+<a href="http://www.google.com">
+<img src="http://www.google.com/images/srpr/logo1w.png" alt="Google">
+</a>
+
+<pre>
+&lt;a href="http://www.google.com" <b>target="_blank"</b>&gt;Google&lt;/a&gt;
+</pre>
+<a href="http://www.google.com" target="_blank">Google (in new window)</a>
+
+<br><br>
+&#9758; <a href="http://uxmovement.com/navigation/why-external-links-should-open-in-new-tabs/">
+Why External Links Should Open in New Tabs</a>
+     </section>
+    </div>
+  
+
+    <div class="slide normal"> 
+     <header><h1>Internal Links</h1></header> 
+     <section class="content"> 
+      <pre>
+&lt;p&gt;Jump to <b>&lt;a href=&quot;#chapter1&quot;&gt;</b>the first chapter!<b>&lt;/a&gt; </b>&lt;/p&gt;
+
+&lt;h1 <b>id=&quot;chapter1&quot;</b>&gt;Chapter 1&lt;/h1&gt;
+
+&lt;p&gt;Most exciting story in the world. To be continued...&lt;/p&gt;
+
+&lt;p&gt;Read more on
+<b>&lt;a href=&quot;http://en.wikipedia.org/wiki/Fox#Diet&quot;&gt;</b>Wikipedia<b>&lt;/a&gt;</b>
+&lt;/p&gt;
+     </pre>
+
+     <p>Jump to <a href="#chapter1">the first chapter!</a></p>
+
+    <h1 id="chapter1">Chapter 1</h1>
+
+    <p>Most exciting story in the world. To be continued...</p>
+
+    <p>Read more on <a href="http://en.wikipedia.org/wiki/Fox#Diet">Wikipedia</a></p>
+
+     </section>
+    </div>
+    
+
+
+    <div class="slide normal"> 
+     <header><h1>HTML Comments</h1></header> 
+     <section class="content"> 
+      <pre>
+<b>&lt;!--</b> I can comment for humans here. <b>--&gt;</b>
+
+<b>&lt;!--</b>
+I can write a comment that
+spans multiple lines too.
+<b>--&gt;</b>
+      </pre>
+
+      Commonly used by snippet providers (like <a href="https://www.addthis.com/">AddThis</a>):
+      <pre>
+<b>&lt;!--</b> AddThis Button BEGIN <b>--&gt;</b>
+&lt;div class=&quot;addthis_toolbox addthis_default_style &quot;&gt;
+  &lt;a class=&quot;addthis_button_preferred_1&quot;&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;script src=&quot;http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4f921b5f4f8898ae&quot;&gt;
+&lt;/script&gt;
+<b>&lt;!--</b> AddThis Button END <b>--&gt;</b>
+      </pre>
+     </section>
+    </div>
+
+    <div class="slide normal"> 
+     <header><h1>HTML Readability</h1></header> 
+     <section class="content"> 
+      <ul>
+       <li>Use quotes around attributes
+       <li>Indent to represent nesting
+       <li>Use same capitalization
+      </ul>
+      Bad:<br>
+      <pre>
+&lt;ul&gt;&lt;li&gt;&lt;a href=http://www.google.com&gt;Google&lt;/a&gt;&lt;/li&gt;
+&lt;LI&gt;Yahoo&lt;/LI&gt;&lt;/UL&gt;
+      </pre>
+      Good:<br>
+      <pre>
+ &lt;ul&gt;
+   &lt;li&gt;&lt;a href=&quot;http://www.google.com&quot;&gt;Google&lt;/a&gt;&lt;/li&gt;
+   &lt;li&gt;Yahoo&lt;/li&gt;
+ &lt;/ul&gt;
+      </pre>
+      <a href="http://coding.smashingmagazine.com/2013/02/19/using-white-space-for-readability-in-html-and-css/">Using
+        Whitespace for Readability in HTML/CSS</a>
+     </section>
+    </div>
+    
+    <div class="slide object">
+      <object data="http://www.w3schools.com/tags/ref_byfunc.asp"></object>
+      <a href="http://www.w3schools.com/tags/ref_byfunc.asp" target="play" class="objectlink">Try it out</a>
+   </div>
+
+    <div class="slide intro">
+      <header><h1>Developing & Debugging</h1></header>
+    </div>
+
+     <div class="slide normal"> 
+     <header><h1>HTML: Editors</h1></header> 
+     <section class="content"> 
+     <p>Since HTML files are just text files, many programs can be used to create them. Some programs provide special assistance for handling HTML, like syntax-highlighting or autocompletion.</p>
+  <br>
+  <table style="font-size:120%; border: 1px solid black;" cellspacing="0">
+   <thead>
+    <tr><th></th><th>Windows</th><th>Mac</th><th>Online</th></tr>
+   </thead>
+    <tbody>
+    <tr><td>Free</td>
+          <td><a href="http://notepad-plus-plus.org/">Notepad++</a></td>
+         <td><a href="http://www.barebones.com/products/textwrangler/">TextWrangler</a>, <a href="http://smultron.sourceforge.net/">Smultron</a></td>
+         <td rowspan="2"> <a href="http://c9.io/">Cloud9 IDE</a>, <a href="http://jsfiddle.net/">JSFIDDLE</a>, <a href="http://jsbin.com/">JSBin</a></td>
+    </tr>
+    <tr><td>$$</td>
+         <td>
+              <a href="http://www.e-texteditor.com/">E-Text Editor</a>,
+              <a href="http://www.sublimetext.com/">SublimeText</a>
+         </td>
+         <td>
+            <a href="http://www.sublimetext.com/">SublimeText</a>,
+            <a href="http://macromates.com/">TextMate</a>, <a href="http://www.panic.com/coda/">Coda</a>, <a href="http://macrabbit.com/espresso/">Espresso</a></td></tr>
+    </tbody>
+  </table>
+     </section>
+    </div>
+
+
+    <div class="slide normal"> 
+      <header><h1>HTML Debugging</h1></header> 
+      <section class="content"> 
+      <ul>
+       <li><A href="https://developers.google.com/chrome-developer-tools/docs/elements">Chrome</a>: Right-click -> "Inspect Element"
+       <li><a href="https://developer.mozilla.org/en/Tools/Inspector">Firefox</a>: Right-click -> "Inspect Element" -> "HTML" or use <a href="https://getfirebug.com/">Firebug add-on</a>
+       <li><a href="http://msdn.microsoft.com/en-us/library/dd565628%28VS.85%29.aspx#html_elementinfo">IE</a>: Open Tools -> Developer Tools (or F12)
+      </ul>
+      <p>Chrome: <br>
+      <img src="./img/screenshot_chromedevtools.png">
+      </p>
+      </section>
+    </div>
+    
+
+    <div class="slide normal"> 
+     <header><h1>HTML Validators</h1></header> 
+     <section class="content"> 
+     <p>Browsers will often render HTML that has mistakes in it, using different error correction strategies.</p>
+<p>To check that your HTML is actually valid according to the standard, run it through <a href="http://validator.w3.org/">the W3C validator</a>.
+</p>
+<center><img src="http://farm5.static.flickr.com/4130/4989476292_806bdbb18a.jpg">
+</center>
+<p>You can also install the <a href="https://addons.mozilla.org/en-US/firefox/addon/249/">validator add-on</a> for Firefox.</p>
+     </section>
+    </div>
+
+    </div>
+    </div>
+    <header>
+    <nav>
+        <ul>
+            <li class="button cancel" id="back">&laquo; Back</li>
+            <li class="button done" id="next">Next &raquo; </li>
+        </ul>
+    </nav>
+</header>
+    <script type="text/javascript" src="../slides.js"></script>
+  </body>
+  </html>

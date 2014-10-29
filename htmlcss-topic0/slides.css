@@ -11,16 +11,27 @@ body {
 	position: absolute;
 	color: #171E45;
 	left: 0px; top: 0px;
+	background: #278680;
 }
 h1 {letter-spacing: 1px;font-family: 'Bigelow Rules', cursive, 'Rum Raisin', "Trebuchet MS", Arial, Helvetica, sans-serif;}
 
 #info {
 	font-size: small;
-	position: absolute;
-	bottom: 0px;
-	left: 40%;
-	z-index: 500;
-	color: #999;
+	color: #fff;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	text-align: center;
+	position: fixed;
+	bottom: 0;
+	z-index: 10;
+	left: 50%;
+	margin-left: -200px;
+	width: 400px;
+	background-color: black;
+	opacity: 0.3;
+}
+#info:hover {
+	opacity: 0.6;
 }
 /* optional */
 #topinfo {
@@ -108,6 +119,9 @@ text-shadow: -1px -1px 2px rgba(0,0,0,1);}
 	transform: scale(1);
 	padding-left: 20px;
 	padding-top: 10px;
+	padding-bottom: 10px;
+	background: #fff;
+	border-radius: 20px 0;
 }
 @media screen and (min-width: 1000px){
 	.slide {
@@ -195,6 +209,7 @@ font-size: 120%;
 	visibility: visible;
 	display: block;
 	margin-left: -450px;
+	padding-right: 10px;
 }
 .slide.future {
 	visibility: visible;
@@ -265,7 +280,7 @@ pre {
 	text-align: left;
 	font-size: 80%;
 	padding: 10px 20px;
-	background: rgba(255,255,255, 0.5);
+	background: rgba(255, 0, 0, 0.05);
 	-moz-border-radius: 8px;
 	border-radius: 8px;
 	border: 1px solid #ccc;
@@ -297,6 +312,13 @@ video {;
 	border: 1px solid rgba(0, 0, 0, 0.2);
 }
 #presentation-counter {
+	color: #ccc;
+	font-size: 100px;
+	letter-spacing: 1px;
+	position: absolute;
+	top: -40%;
+	left: 0;
+	width: 100%;
 
 }
 div:not(.current).reduced {
@@ -380,7 +402,7 @@ pre, .ex, .pre, .codelike {
 text-align: left;
 font-size: 80%;
 padding: 10px 20px;
-background: rgba(255, 255, 255, 0.6);
+background: rgba(255, 0, 0, 0.05);
 -moz-border-radius: 8px;
 border-radius: 8px;
 border: 1px solid #fff;
@@ -569,14 +591,17 @@ h1 {font-family: 'Rum Raisin', sans-serif;}
 	border-radius: 5px;
 	background-color: #55819E;
 	padding: 10px;
+	box-shadow: 5px 5px 5px #888888;
 }
 .css-tag {
 	border-radius: 5px;
+	box-shadow: 5px 5px 5px #888888;
 	background-color: #BD8A00;
 	padding: 10px;
 }
 .js-tag {
 	border-radius: 5px;
+	box-shadow: 5px 5px 5px #888888;
 	background-color: #C22D10;
 	padding: 10px;
 }
