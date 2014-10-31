@@ -1,0 +1,398 @@
+
+<!DOCTYPE html>
+<html> 
+  <head>
+    <!--[if gte IE 9]><meta http-equiv="X-UA-Compatible" content="IE=edge" /><![endif]-->
+    <!--[if lt IE 9]><meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1" /><![endif]-->
+<meta charset="utf-8" />
+    <title>CSS Properties</title>
+    <link href='http://fonts.googleapis.com/css?family=Rum+Raisin' rel='stylesheet'>
+    <link href='http://fonts.googleapis.com/css?family=Bigelow+Rules' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="../slides.css"/>
+<style>
+.current * { -webkit-tap-highlight-color: #bada55;}
+.thisSlide.foo {
+  -webkit-tap-highlight-color: #bada55;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+.beforeafter:before {
+  content: "before - ";
+  font-weight: bold;
+}
+.beforeafter:after {
+  content: " - after";
+  font-weight: bold;
+  }
+.active {color: red; font-weight: bold; background-color: rgba(0,0,0,0.3)}
+#presentation {-webkit-animation: none; background-image: none;}
+p{
+	line-height:150%
+}
+</style>
+</head>
+  <body> 
+  
+  <div id="info">
+    <p><a href="https://github.com/globant-ui/">Globant UI</a> | <a href="https://github.com/globant-ui/html5bootcamp">Bootcamp Github</a> | Press   <span class="key">&rarr;</span> key to advance.</p>
+  </div>
+  
+  <div id="presentation">
+  
+   <div id="presentation-counter"></div>
+      
+   <div id="slides">
+   
+    <div class="slide intro"> 
+     <header><h1>CSS: Properties</h1></header>
+    </div> 
+    
+    
+   
+    
+    
+    
+    <div class="slide normal"> 
+     <header><h1>Declarations (Property Value Pairs)</h1></header> 
+     <section class="content"> 
+     <p>
+Each property can have one or more space separated values.
+</p>
+<pre>
+font: italic 12px sans-serif;
+color: #333;
+background-color: red;
+</pre>
+     </section>
+    </div>
+    
+   
+    
+    
+    
+    <div class="slide normal"> 
+     <header><h1>Properties: color</h1></header> 
+     <section class="content"> 
+     <p>The "color" property changes the text color. Colors can be specified either by name, for the most common colors, or by hexadecimal value. 
+</p>
+<pre>
+color: red;
+color: #ff0000;
+color: rgb(255, 0, 0); 
+</pre>
+<p>
+This property is <strong>inherited</strong>
+</p>
+<pre>
+body {
+  color: red;
+}
+</pre>
+        
+     </section>
+    </div>
+    
+   
+    
+    
+    
+    <div class="slide normal"> 
+     <header><h1>Properties: background-color</h1></header> 
+     <section class="content"> 
+     <p>The "background-color" property changes the background color. Besides the <code>BODY</code> element, all elements default to a transparent background.
+<pre>
+background-color: black;
+background-color: #000000;
+background-color: rgb(0,0,0); 
+</pre>
+
+<pre>
+body {
+  background-color: yellow;
+}
+
+table {
+  background-color: #FFCC00;
+}
+</pre>
+
+     </section>
+    </div>
+    
+   
+    <div class="slide normal"> 
+     <header><h1>Property: font-family</h1></header> 
+     <section class="content">      
+<pre>
+font-family: "Times New Roman";
+font-family: sans-serif;
+</pre>
+<p>
+A comma separated list of font families can be specified if you want the browser to prefer one but use the others as backup options.
+</p>
+<pre>
+font-family: "Times New Roman", serif;
+font-family: "Arial", sans-serif;
+font-family: Courier, monospace;
+</pre>
+
+
+     </section>
+    </div>
+    
+   
+    
+    
+    
+   <!-- <div class="slide normal"> 
+     <header><h1>Finding fonts</h1></header> 
+     <section class="content"> 
+     <p>Several websites exist that help you pick fonts for your website and to customize it with non-default fonts:</p>
+<ul>
+  <li><a href="http://www.google.com/webfonts/">Google Web Fonts</a>
+ <li><a href="http://www.typetester.org/">TypeTester</a>
+ <li><a href="http://typekit.com/">TypeKit</a>
+ <li><a href="http://fontfonter.com/">FontFonter</a>
+ <li><a href="http://www.goodwebfonts.com/">Good Web Fonts</a>
+ <li><a href="http://www.typotheque.com/fonts/">Typotheque</a>
+ <li><a href="http://daneden.me/type/">Pairing fonts</a>
+ <li><a href="http://whatthefont.com">whatthefont.com</a>
+</ul>
+      <p>Live examples of custom fonts: <a href="http://2012.jsconf.us/">2012 JSConf</a>, <a href="http://teach-world-code.appspot.com/">Teach the World to Code</a></p>
+
+     </section>
+    </div>-->
+    
+   
+    
+    
+    
+    <div class="slide normal"> 
+     <header><h1>Property: font-size</h1></header> 
+     <section class="content"> 
+     <p>The "font-size" property specifies the size of a font. It can be specified as a fixed size in various units, a percentage, or as a predefined keyword.
+</p>
+
+<pre>
+font-size: 1.5em;
+font-size: 12px;
+font-size: 100%;
+font-size: larger;
+</pre>
+     </section>
+    </div>
+    
+   
+    
+   
+    
+    
+    
+    <div class="slide normal"> 
+     <header><h1>Property: font-size (px)</h1></header> 
+     <section class="content"> 
+     <p>The "px" unit lets you size font in terms of pixels, which is the unit also used to size images and other elements. It is easier to understand than em, but doesn't work as well when printing or resizing.
+</p>
+<pre>
+h2 {
+  font-size: 17px; 
+}
+</pre>
+
+<h2>Normal Headline</h2>
+<h2 style="font-size: 17px;">Resized Headline</h2>
+     </section>
+    </div>
+    
+   
+    
+    
+    
+    <div class="slide normal"> 
+     <header><h1>Property: font-size (keywords)</h1></header> 
+     <section class="content"> 
+     <p>There are various keywords that can be used if you're not as worried about the precise sizing: xx-small, x-small, small, medium, large, x-large, xx-large.
+</p>
+<pre>
+p.footnote {
+  font-size: small;
+}
+</pre>
+<p>There are also two relative keywords, that act similar to em's in setting size relative: smaller, larger.</p>
+<pre>
+p.intro {
+  font-size: larger;
+}
+</pre>
+
+     </section>
+    </div>
+    
+   
+    
+    <div class="slide normal"> 
+     <header><h1>Property: font-size (em)</h1></header> 
+     <section class="content"> 
+     <p>The "em" unit lets you set the size of the text relative to the text around it. This makes the page resize nicely in proportion if the user changes their default font-size. The default size is "1em".</p>
+
+<pre>
+p {
+  font-size: 0.9em; 
+}
+
+strong {
+  font-size: 1.5em; 
+}
+</pre>
+
+<p style="font-size: .9em;">Hello <strong style="font-size:1.5em">there</strong>!</p>
+
+     </section>
+    </div>
+    
+    
+    <div class="slide normal"> 
+     <header><h1>Property: font-size (%)</h1></header> 
+     <section class="content"> 
+     <p>The size can also be specified as a percentage, which works similar to "ems", and can be used in conjunction with other units.
+</p>
+<pre>
+body { 
+  font-size: 12px; 
+}
+
+h1 { 
+  font-size: 200%; 
+}
+
+h1 a { 
+  font-size: 75%; 
+}
+</pre>
+
+<div style="font-size: 12px;">
+  <h1 style="font-size:200%">Header <a style="font-size:75%" href="#">Link</a></h1>
+  Text!
+</div>
+     </section>
+    </div>
+    
+   
+    
+    
+    
+    <div class="slide normal"> 
+     <header><h1>Property: font-style</h1></header> 
+     <section class="content"> 
+     <p>The "font-style" property specifies the font style of the text, either "normal" by default or "italic".
+</p>
+
+<pre>
+font-style: italic;
+</pre>
+
+<p style="font-style:italic">
+Italicized text.
+</p>
+
+     </section>
+    </div>
+    
+   
+    
+    
+    
+    <div class="slide normal"> 
+     <header><h1>Property: font-weight</h1></header> 
+     <section class="content"> 
+     <p>The "font-weight" property specifies the thickness of the font. The default is "normal" and the typical override is "bold". You can also specify "bolder", "lighter", or a number from 100 to 900.</p>
+
+<pre>
+font-weight: bold;
+</pre>
+
+<p style="font-weight: bold">
+Bold text!
+</p>
+     </section>
+    </div>
+    
+   
+    
+    
+    
+    <div class="slide normal"> 
+     <header><h1>&quot;Shorthand&quot; properties</h1></header> 
+     <section class="content"> 
+     <p>A "shorthand" property lets you specify multiple properties in one property</p>
+<pre>
+table.geeky {
+  font-weight: bold;
+  font-style: italic;
+  font-size: 10px;
+  font-family: sans-serif;
+}
+</pre>
+<p>Those four rules can be written as:</p>
+<pre>
+table {
+  font: italic bold 10px sans-serif;
+}
+</pre>
+
+     </section>
+    </div>
+    
+   
+    
+    
+    
+    <div class="slide normal"> 
+     <header><h1>Other text properties</h1></header> 
+     <section class="content"> 
+     <pre>
+line-height: 10px;
+</pre>
+<p style="line-height: 10px;">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aliquam convallis ligula ut suscipit. Phasellus hendrerit, enim scelerisque...
+</p>
+<pre>
+text-align: center;
+</pre>
+<p style="text-align:center">
+Centered text.
+</p>
+<pre>
+text-decoration: underline;
+</pre>
+<p style="text-decoration:underline">Underlined text</p>
+<pre>
+text-indent: 20px;
+</pre>
+<p style="text-indent:20px">Indented text.</p>
+     </section>
+    </div>
+    
+   
+    <div class="slide section"> 
+     <header>
+        <h1><a href="exercise_descrip.html">Exercise Time!</a></h1>
+        
+      </header>
+    </div>
+    
+   
+   
+   </div>
+   
+  </div>
+  
+ <script type="text/javascript" src="../slides.js"></script>
+ 
+  <!--[if lt IE 9]>
+  <script 
+  src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+  <script>CFInstall.check({ mode: "overlay" });</script>
+  <![endif]--> 
+  </body> 
+</html>
