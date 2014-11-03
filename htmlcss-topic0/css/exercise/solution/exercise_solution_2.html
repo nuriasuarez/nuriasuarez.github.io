@@ -4,12 +4,12 @@
   <meta charset="utf-8">
   <title>Globant Bootcamp</title>
     <link rel="stylesheet" type="text/css" href="http://necolas.github.io/normalize.css/3.0.2/normalize.css">
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="styles_2.css">
  </head>
  <body>
-    <header>
+    <header class="header">
         <img src="http://www.globant.com/sites/all/themes/globantv2/images/logo_globant_384.png" alt="Globant" height="42" />
-        <nav>
+        <nav class="navigation">
             <ul>
                 <li><a href="#">HTML</a></li>
                 <li><a href="#">CSS</a></li>
@@ -17,7 +17,7 @@
             </ul>
         </nav>
     </header>
-    <section>
+    <section class="content">
         <h1>About HTML5 Boot Camp</h1>
      
         <p>
@@ -26,19 +26,20 @@
         <p>
             <img src="https://github.com/globant-ui/html5bootcamp/raw/master/assets/html5-css-javascript.png" alt="" height="400">
         </p>
+        <article class="article">
+            <h2>Introduction</h2>
+            <p>
+                <strong>HTML</strong> describes the content semantics and structure of a web page. It was designed as a markup language, if you know XML, you could consider HTML as a subset of XML with a predefined semantic.
+            </p>
 
-        <h2>Introduction</h2>
-        <p>
-            <strong>HTML</strong> describes the content semantics and structure of a web page. It was designed as a markup language, if you know XML, you could consider HTML as a subset of XML with a predefined semantic.
-        </p>
+            <p>On the other hand, <strong>CSS</strong> allows to define the look and feel of the content. It's used to set colors on HTML elements, customize sizes, define the layout of the document content, among others. (e.x. "The following list of elements must be shown as a menu", "The main title of the page should use this particular font").</p>
 
-        <p>On the other hand, <strong>CSS</strong> allows to define the look and feel of the content. It's used to set colors on HTML elements, customize sizes, define the layout of the document content, among others. (e.x. "The following list of elements must be shown as a menu", "The main title of the page should use this particular font").</p>
-
-        <p><strong>JavaScript</strong> is a programming language that runs in all Web Browsers. It allows to add dynamism to a web page, by supplying a way to have more control over user interaction, and allowing altering the document content that is displayed.</p>
+            <p><strong>JavaScript</strong> is a programming language that runs in all Web Browsers. It allows to add dynamism to a web page, by supplying a way to have more control over user interaction, and allowing altering the document content that is displayed.</p>
+        </article>
     </section>
-    <aside>
+    <aside class="sidebar">
          <h2>Join Globant</h2>
-          <form action="#" method="post">
+          <form action="#" method="post" class="joinForm">
             <div>
                 <label for="name">Name:</label> <input name="name" type="text" id="name" required class="required" />
             </div>
@@ -70,7 +71,7 @@
           </form>
 
     </aside>
-    <footer>
+    <footer class="footer">
         <a href="https://twitter.com/Globant" id="twitter">Twitter</a> | <a href="http://www.facebook.com/Globant">Facebook</a> | <a href="http://www.linkedin.com/company/globant">LinkedIn</a>  | <a href="http://www.youtube.com/user/Globant">Youtube</a>
     </footer>
 

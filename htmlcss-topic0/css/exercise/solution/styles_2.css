@@ -1,0 +1,51 @@
+body {
+	font-size: 14px;
+	font-family: Arial;
+}
+
+h1, h2 {
+  color: darkgreen;
+}
+
+p strong, p em {
+  color: orange;
+}
+
+ul ul li {
+  color: red;
+}
+
+form label, form legend {
+  color: darkred;
+}
+
+.required {
+  color: red;
+}
+
+#twitter {
+  color: lightblue;
+}
+
+.footer, 
+.sidebar {
+	font-size: 12px;
+} 
+
+.content {
+	font-size: 14px;
+}
+
+.navigation {
+	font-size: 16px;	
+}
+.joinForm label {
+	font-weight: bold;
+}
+.content > p:first-of-type {
+	font-size: 36px;
+	font-style: italic;
+}
+.article {
+	background-color: #EEE;
+}
