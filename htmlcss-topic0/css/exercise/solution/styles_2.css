@@ -49,3 +49,7 @@ form label, form legend {
 .article {
 	background-color: #EEE;
 }
+
+.navigation li {
+	list-style: none;
+}
