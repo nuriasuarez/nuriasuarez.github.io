@@ -611,3 +611,40 @@ h1 {font-family: 'Rum Raisin', sans-serif;}
 	text-align: center;
 	font-size: 140%;
 }
+
+#microdata-screenshot {
+  width: 84%;
+  margin: 0 auto;
+  display: block;
+  border: 3px solid #ccc;
+}
+#microdata figure {
+  display: block;
+  text-align: center;
+}
+#microdata figcaption {
+  display: block;
+}
+.form-inputs {
+  font-size: 80%;
+}
+.form-inputs input {
+  float: right;
+  border: 1px solid #CCC;
+  -webkit-box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.2);
+  padding: 3px 5px;
+}
+input[required] {
+  border-color: #88a;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 3px inset, rgba(0, 0, 255, 0.5) 0px 0px 3px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 3px inset, rgba(0, 0, 255, 0.5) 0px 0px 3px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 3px inset, rgba(0, 0, 255, 0.5) 0px 0px 3px;
+}
+input:invalid {
+  border-color: #e88;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 3px inset, 0 0 5px rgba(255, 0, 0, .8);
+  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 3px inset, 0 0 5px rgba(255, 0, 0, .8);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 3px inset, 0 0 5px rgba(255, 0, 0, .8);
+}
