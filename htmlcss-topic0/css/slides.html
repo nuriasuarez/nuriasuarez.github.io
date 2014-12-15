@@ -1,0 +1,193 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <!--[if gte IE 9]><meta http-equiv="X-UA-Compatible" content="IE=edge" /><![endif]-->
+    <!--[if lt IE 9]><meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1" /><![endif]-->
+    <meta charset="utf-8" />
+    <title>CSS</title>
+    <link href='http://fonts.googleapis.com/css?family=Rum+Raisin' rel='stylesheet'>
+      <link href='http://fonts.googleapis.com/css?family=Bigelow+Rules' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="../slides.css"/>
+        <style>
+        .current * { -webkit-tap-highlight-color: #bada55;}
+        .thisSlide.foo {
+        -webkit-tap-highlight-color: #bada55;
+        -webkit-user-select: none;
+        -webkit-touch-callout: none;
+        }
+        .beforeafter:before {
+        content: "before - ";
+        font-weight: bold;
+        }
+        .beforeafter:after {
+        content: " - after";
+        font-weight: bold;
+        border: dashed;
+        }
+        .active {color: red; font-weight: bold; background-color: rgba(0,0,0,0.3)}
+        #presentation {-webkit-animation: none; background-image: none;}
+        pre[contenteditable]{
+        font-size: 100%;
+        line-height: 1.5;
+        }
+        </style>
+      </head>
+      <body>
+        <!-- Top instructions -->
+        <div id="topinfo"></div>
+        <!-- footer instructions -->
+        <div id="info">
+          <p><a href="https://github.com/globant-ui/">Globant UI</a> | <a href="https://github.com/globant-ui/html5bootcamp">Bootcamp Github</a> | Press <span class="key">&rarr;</span> key to advance.</p>
+        </div>
+        <div id="presentation">
+          <div id="presentation-counter"></div>
+          <div id="slides">
+            <div class="slide intro">
+              <header><hgroup>
+                <h1><span class="textmask">Lesson 2: CSS</span></h1>
+                <h6>December 9, 2014</h6>
+              </hgroup></header>
+
+            </div>
+            
+            <div class="slide normal"> 
+              <header>   
+                <h1>CSS: "Cascading Style Sheets"</h1>     
+              </header> 
+              <section class="content" >   
+               
+                <ul style="font-size:100%; line-height:1.5">
+                  <li>A language that lets you style the elements on your page</li>
+                  <li>Consists of "style rules"</li>
+                  <li>Each style rule consists of a "selector" and "declarations" of property-value pairs:</li>
+                </ul>  
+<pre contenteditable><span style="color:blue">selector</span> {
+ <span style="color:red">property</span>: <span style="color:green">value</span>;  
+ <span style="color:red">property</span>: <span style="color:green">value</span>;
+}
+</pre>                
+              </section>  
+             </div>
+           
+            <div class="slide normal">
+              <header><h1>Universal selector</h1></header>
+              <section class="content">
+<pre contenteditable style="font-size:100%; line-height:1.5">
+* {
+   margin: 0;
+   font-size: 20px;
+   line-height: 25px;
+}
+</pre>
+              </section>
+            </div>
+           
+            <div class="slide normal">
+              <header><h1>Basic selectors</h1></header>              
+              <a href="http://jsfiddle.net/mrolon/8yohre0d/" target="play" class="objectlink">Try it out</a>             
+              <section class="content">
+                <pre contenteditable style="font-size:100%; line-height:1.5">
+element {
+   property1: value1;
+}
+.class {
+   property2: value2;
+}
+#id {
+   property3: value3;
+}</pre>
+              </section>
+            </div>
+           
+            <div class="slide normal">
+              <header><h1>Descendant combinator</h1></header>     
+              <a href=" http://jsfiddle.net/mrolon/m01soc9g/" target="play" class="objectlink">Try it out</a>             
+            </div>
+            
+             <div class="slide normal">
+              <header><h1>Child combinator</h1></header> 
+              <section class="content" style="font-size: 36px;">
+                 
+              <a href=" http://jsfiddle.net/mrolon/b12ysg8r/1/" target="play" class="objectlink">Try it out</a>             
+            </div>
+           
+           <div class="slide normal">
+              <header><h1>General Sibling Combinator</h1></header>     
+              <section class="content" style="font-size: 36px;">
+               
+              </section>
+              <a href="http://jsfiddle.net/mrolon/vLujs4s3/" target="play" class="objectlink">Try it out</a>             
+            </div>
+
+           
+              <div class="slide normal">
+              <header><h1>Adjacent Sibling Combinator</h1></header>     
+              <section class="content" style="font-size: 36px;">
+                
+              </section>
+              <a href=" http://jsfiddle.net/mrolon/rfx100x4/" target="play" class="objectlink">Try it out</a>             
+            </div>
+
+            
+            <div class="slide normal">
+              <header><h1>Attribute Selector</h1></header>     
+              <section class="content" style="font-size: 36px;">
+               
+              </section>
+              <a href="http://jsfiddle.net/mrolon/docyw9jf/2/" target="play" class="objectlink">Try it out</a>             
+            </div>
+
+             <div class="slide normal">
+              <header><h1>Pseudo class</h1></header>     
+              <section class="content" style="font-size: 36px;">
+               
+              </section>
+              <a href="http://jsfiddle.net/mrolon/7pL101vg/" target="play" class="objectlink">Try it out</a>             
+            </div>
+           
+            <div class="slide normal">
+              <header><h1>Pseudo element</h1></header>     
+              <section class="content" style="font-size: 36px;">
+                
+              </section>
+              <a href=" http://jsfiddle.net/mrolon/woc6vwm1/" target="play" class="objectlink">Try it out</a>             
+            </div>
+
+            <div class="slide normal">
+              <header><h1>Specificity</h1></header>     
+              <section class="content" style="font-size: 36px;">
+                <img src="hierarchy.jpg" alt="Specificity image" style="width: 80%"/>                
+              </section>
+                  <a href="http://specificity.keegan.st/" target="play" class="objectlink">Try it out</a>            
+            </div>
+
+
+
+            <div class="slide normal">
+              <header><h1>More information</h1></header>     
+              <section class="content" style="font-size: 36px;">
+                <ul>
+                  <li><a href="http://www.w3.org/TR/CSS21/selector.html" target="_blank">W3C - CSS Selectors</a> </li>
+                  <li><a href="http://www.w3schools.com/cssref/css_selectors.asp" target="_blank">w3schools - CSS Selectors</a></li>
+                </ul>
+              </section>
+                          
+            </div>
+
+          </div>
+
+          
+</div>
+
+
+<header>
+<nav>
+  <ul>
+    <li class="button cancel" id="back">&laquo; Back</li>
+    <li class="button done" id="next">Next &raquo; </li>
+  </ul>
+</nav>
+</header>
+<script type="text/javascript" src="../slides.js"></script>
+</body>
+</html>
